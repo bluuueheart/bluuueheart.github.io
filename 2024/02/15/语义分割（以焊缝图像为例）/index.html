@@ -14,22 +14,25 @@
   
 
   
-  <title>about | lil&#39;s blog</title>
+  <title>语义分割（以焊缝图像为例） | lil&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="初衷是自己存档用，方便回顾记忆、寻找bug和优化某一个环节；请多多指教！“要立新功。”">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://bluuueheart.github.io/about/index.html">
+  <meta name="description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 #标注自己的语义分割数据集：Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 #安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmenta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语义分割（以焊缝图像为例）">
+<meta property="og:url" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="lil&#39;s blog">
-<meta property="og:description" content="初衷是自己存档用，方便回顾记忆、寻找bug和优化某一个环节；请多多指教！“要立新功。”">
+<meta property="og:description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 #标注自己的语义分割数据集：Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 #安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmenta">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-24T12:11:50.000Z">
-<meta property="article:modified_time" content="2024-02-24T13:10:39.154Z">
+<meta property="article:published_time" content="2024-02-15T13:03:37.000Z">
+<meta property="article:modified_time" content="2024-02-24T14:05:49.715Z">
 <meta property="article:author" content="lil">
+<meta property="article:tag" content="project">
+<meta property="article:tag" content="CV">
+<meta property="article:tag" content="py">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="lil's blog" type="application/atom+xml">
@@ -223,7 +226,9 @@
     <div id="content-body">
        
 
-<article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-语义分割（以焊缝图像为例）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
    
   <div class="article-inner">
     <div class="article-main">
@@ -234,7 +239,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        about
+        语义分割（以焊缝图像为例）
       </h1>
     
   
@@ -242,25 +247,44 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-02-24T12:11:50.000Z" itemprop="datePublished">2024-02-24</time>
+  <time class="dt-published" datetime="2024-02-15T13:03:37.000Z" itemprop="datePublished">2024-02-15</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    Uncategorized 
+  <a class="meta-cate-link" href="/categories/coding/">coding</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            34 words 
+            301 words 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CV/" rel="tag">CV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/" rel="tag">py</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>初衷是自己存档用，方便回顾记忆、寻找bug和优化某一个环节；<br>请多多指教！<br>“要立新功。”</p>
+          <p>环境：featurize<br>GPU RTX 4000 CUDA v11.3</p>
+<p>#标注自己的语义分割数据集：Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式<br><a target="_blank" rel="noopener" href="https://www.coovally.com/">数据集格式转换工具</a><br>整数掩膜矩阵反映了原图对应像素的类别</p>
+<p>#安装配置MMSegmentation<br>安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmentation 检查安装成功 设置Matplotlib中文字体</p>
+<ul>
+<li><input disabled="" type="checkbox"> 云GPU环境无法保留，需要重复配置</li>
+</ul>
+<p>#准备config配置文件<br>##数据集配置文件<br>各类别名称及配色<br>##注册数据集类<br>##pipeline配置文件<br>数据集路径、预处理、后处理、DataLoader、测试集评估指标</p>
+<p>#训练 语义分割算法-KNet<br>文件名要变 例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd mmsegmentation</span><br><span class="line"></span><br><span class="line">python tools/train.py lil-Configs/lilDataset_PSPNet_20230818.py</span><br></pre></td></tr></table></figure>
+<ul>
+<li><input disabled="" type="checkbox"> 可视化训练日志</li>
+</ul>
+<p>bug:</p>
+<ul>
+<li>ValueError: need at least one array to concatenate mask<br>img_dir必须是jpg格式</li>
+<li>FileNotFoundError: [Errno 2] No such file or directory: ‘数据集中一文件夹名’<br>更新config文档，检查数据集路径</li>
+<li>CUDA out of memeory<br>调小 batch size；关闭所有内核，释放其它notebook占用的显存；重启实例，或者使用显存更高的实例</li>
+</ul>
 
         
       </div>
@@ -272,6 +296,34 @@
   </div>
   
     
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/02/21/stm32%E6%8A%80%E6%9C%AF/"
+      title="stm32技术"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        stm32技术
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/02/14/hello-world/"
+      title="Hello World"
+     >
+
+    <p class="title-text">
+      
+        Hello World
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
 
   
 </article>

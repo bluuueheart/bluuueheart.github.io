@@ -2,11 +2,11 @@
 
 
 <html theme="dark" showBanner="true" hasBanner="true" > 
-<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
-<link href="/fontawesome/css/brands.css" rel="stylesheet">
-<link href="/fontawesome/css/solid.css" rel="stylesheet">
-<script src="/js/color.global.min.js" ></script>
-<script src="/js/load-settings.js" ></script>
+<link href="../../../../fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="../../../../fontawesome/css/brands.css" rel="stylesheet">
+<link href="../../../../fontawesome/css/solid.css" rel="stylesheet">
+<script src="../../../../js/color.global.min.js" ></script>
+<script src="../../../../js/load-settings.js" ></script>
 <head>
   <meta charset="utf-8">
   
@@ -17,35 +17,39 @@
   <title>pcl | lil&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="大部分代码来源于pcl官方教程，仅作少量修改，作练习用。#segmentation分割（聚类） ##实现效果 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869#include &lt;ios">
+<meta property="og:type" content="article">
 <meta property="og:title" content="pcl">
 <meta property="og:url" content="https://bluuueheart.github.io/2024/03/10/pcl/index.html">
 <meta property="og:site_name" content="lil&#39;s blog">
+<meta property="og:description" content="大部分代码来源于pcl官方教程，仅作少量修改，作练习用。#segmentation分割（聚类） ##实现效果 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869#include &lt;ios">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bluuueheart.github.io/2024/03/10/pcl/1.png">
 <meta property="article:published_time" content="2024-03-10T05:59:36.000Z">
-<meta property="article:modified_time" content="2024-03-10T06:02:47.854Z">
+<meta property="article:modified_time" content="2024-03-10T06:43:18.751Z">
 <meta property="article:author" content="lil">
 <meta property="article:tag" content="project">
 <meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bluuueheart.github.io/2024/03/10/pcl/1.png">
   
-    <link rel="alternate" href="/atom.xml" title="lil's blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
-    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
-    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+    <link rel="alternate" href="../../../../atom.xml" title="lil's blog" type="application/atom+xml">
   
   
-<link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="../../../../images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="../../../../images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="../../../../images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="../../../../images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="../../../../images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="../../../../images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="../../../../images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="../../../../images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="../../../../css/style.css">
 
 <meta name="generator" content="Hexo 7.1.1"></head>
 
@@ -54,7 +58,7 @@
   
     
 <div id="banner" class="">
-  <img src="/images/3.png" itemprop="image">
+  <img src="../../../../images/3.png" itemprop="image">
   <div id="banner-dim"></div>
 </div>
  
@@ -63,7 +67,7 @@
     <div id="nav" class=""  >
       <navbar id="navbar">
   <nav id="title-nav">
-    <a href="/">
+    <a href="../../../../index.html">
       <div id="vivia-logo">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -75,11 +79,11 @@
   </nav>
   <nav id="main-nav">
     
-      <a class="main-nav-link" href="/">Home</a>
+      <a class="main-nav-link" href="../../../../index.html">Home</a>
     
-      <a class="main-nav-link" href="/archives">Archives</a>
+      <a class="main-nav-link" href="../../../../archives">Archives</a>
     
-      <a class="main-nav-link" href="/about">About</a>
+      <a class="main-nav-link" href="../../../../about">About</a>
     
   </nav>
   <nav id="sub-nav">
@@ -88,7 +92,7 @@
       <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
     </a>
     
-      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="../../../../atom.xml" title="RSS Feed">
         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
       </a>
     
@@ -100,14 +104,14 @@
 <div id="nav-dropdown" class="hidden">
   <div id="dropdown-link-list">
     
-      <a class="nav-dropdown-link" href="/">Home</a>
+      <a class="nav-dropdown-link" href="../../../../index.html">Home</a>
     
-      <a class="nav-dropdown-link" href="/archives">Archives</a>
+      <a class="nav-dropdown-link" href="../../../../archives">Archives</a>
     
-      <a class="nav-dropdown-link" href="/about">About</a>
+      <a class="nav-dropdown-link" href="../../../../about">About</a>
     
     
-      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+      <a class="nav-dropdown-link" href="../../../../atom.xml" title="RSS Feed">RSS</a>
      
     </div>
 </div>
@@ -126,7 +130,7 @@
   <div class="info-card">
     <div class="avatar">
       
-        <image src=/images/1.jpg></image>
+        <image src=../../../../images/1.jpg></image>
       
       <div class="img-dim"></div>
     </div>
@@ -166,7 +170,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CV/" rel="tag">CV</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/py/" rel="tag">py</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/CV/" rel="tag">CV</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/project/" rel="tag">project</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/py/" rel="tag">py</a></li></ul>
     </div>
   </div>
 
@@ -178,12 +182,12 @@
       <h3 class="widget-title">Archives</h3>
       
       
-        <a class="archive-link" href="/archives/2024/03 ">
+        <a class="archive-link" href="../../../../archives/2024/03 ">
           March 2024 
           <div class="archive-count">1 </div>
         </a>
       
-        <a class="archive-link" href="/archives/2024/02 ">
+        <a class="archive-link" href="../../../../archives/2024/02 ">
           February 2024 
           <div class="archive-count">3 </div>
         </a>
@@ -199,25 +203,25 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/03/10/pcl/" title="pcl" >
+          <a class="recent-link" href="" title="pcl" >
             <div class="recent-link-text">
               pcl
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/02/21/stm32%E6%8A%80%E6%9C%AF/" title="stm32技术" >
+          <a class="recent-link" href="../../../02/21/stm32%E6%8A%80%E6%9C%AF/" title="stm32技术" >
             <div class="recent-link-text">
               stm32技术
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/" title="语义分割（以焊缝图像为例）" >
+          <a class="recent-link" href="../../../02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/" title="语义分割（以焊缝图像为例）" >
             <div class="recent-link-text">
               语义分割（以焊缝图像为例）
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/02/14/hello-world/" title="Hello World" >
+          <a class="recent-link" href="../../../02/14/hello-world/" title="Hello World" >
             <div class="recent-link-text">
               Hello World
             </div>
@@ -266,16 +270,18 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            0 words 
+            278 words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CV/" rel="tag">CV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/CV/" rel="tag">CV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/project/" rel="tag">project</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          
+          <p>大部分代码来源于pcl官方教程，仅作少量修改，作练习用。<br>#segmentation分割（聚类）</p>
+<p>##实现效果<br><img src="1.png" title="T形接头的区域增长细分"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/point_types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/io/pcd_io.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/search/search.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/search/kdtree.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/features/normal_3d.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/visualization/cloud_viewer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/filters/filter_indices.h&gt;</span> <span class="comment">// for pcl::removeNaNFromPointCloud</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pcl/segmentation/region_growing.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span></span></span><br><span class="line"><span class="function"><span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pcl::PointCloud&lt;pcl::PointXYZ&gt;::<span class="function">Ptr <span class="title">cloud</span><span class="params">(<span class="keyword">new</span> pcl::PointCloud&lt;pcl::PointXYZ&gt;)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (pcl::io::loadPCDFile &lt;pcl::PointXYZ&gt;(<span class="string">&quot;T.pcd&quot;</span>, *cloud) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Cloud reading failed.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">return</span> (<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    pcl::search::Search&lt;pcl::PointXYZ&gt;::<span class="function">Ptr <span class="title">tree</span><span class="params">(<span class="keyword">new</span> pcl::search::KdTree&lt;pcl::PointXYZ&gt;)</span></span>;</span><br><span class="line">    pcl::PointCloud &lt;pcl::Normal&gt;::<span class="function">Ptr <span class="title">normals</span><span class="params">(<span class="keyword">new</span> pcl::PointCloud &lt;pcl::Normal&gt;)</span></span>;</span><br><span class="line">    pcl::NormalEstimation&lt;pcl::PointXYZ, pcl::Normal&gt; normal_estimator;</span><br><span class="line">    normal_estimator.<span class="built_in">setSearchMethod</span>(tree);</span><br><span class="line">    normal_estimator.<span class="built_in">setInputCloud</span>(cloud);</span><br><span class="line">    normal_estimator.<span class="built_in">setKSearch</span>(<span class="number">50</span>);</span><br><span class="line">    normal_estimator.<span class="built_in">compute</span>(*normals);</span><br><span class="line"></span><br><span class="line">    <span class="function">pcl::IndicesPtr <span class="title">indices</span><span class="params">(<span class="keyword">new</span> std::vector &lt;<span class="type">int</span>&gt;)</span></span>;</span><br><span class="line">    pcl::<span class="built_in">removeNaNFromPointCloud</span>(*cloud, *indices);</span><br><span class="line"></span><br><span class="line">    pcl::RegionGrowing&lt;pcl::PointXYZ, pcl::Normal&gt; reg;</span><br><span class="line">    reg.<span class="built_in">setMinClusterSize</span>(<span class="number">50</span>);</span><br><span class="line">    reg.<span class="built_in">setMaxClusterSize</span>(<span class="number">1000000</span>);</span><br><span class="line">    reg.<span class="built_in">setSearchMethod</span>(tree);</span><br><span class="line">    reg.<span class="built_in">setNumberOfNeighbours</span>(<span class="number">30</span>);</span><br><span class="line">    reg.<span class="built_in">setInputCloud</span>(cloud);</span><br><span class="line">    reg.<span class="built_in">setIndices</span>(indices);</span><br><span class="line">    reg.<span class="built_in">setInputNormals</span>(normals);</span><br><span class="line">    reg.<span class="built_in">setSmoothnessThreshold</span>(<span class="number">3.0</span> / <span class="number">180.0</span> * M_PI);</span><br><span class="line">    reg.<span class="built_in">setCurvatureThreshold</span>(<span class="number">1.0</span>);</span><br><span class="line"></span><br><span class="line">    std::vector &lt;pcl::PointIndices&gt; clusters;</span><br><span class="line">    reg.<span class="built_in">extract</span>(clusters);</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Number of clusters is equal to &quot;</span> &lt;&lt; clusters.<span class="built_in">size</span>() &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;First cluster has &quot;</span> &lt;&lt; clusters[<span class="number">0</span>].indices.<span class="built_in">size</span>() &lt;&lt; <span class="string">&quot; points.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;These are the indices of the points of the initial&quot;</span> &lt;&lt;</span><br><span class="line">        std::endl &lt;&lt; <span class="string">&quot;cloud that belong to the first cluster:&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::<span class="type">size_t</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (counter &lt; clusters[<span class="number">0</span>].indices.<span class="built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        std::cout &lt;&lt; clusters[<span class="number">0</span>].indices[counter] &lt;&lt; <span class="string">&quot;, &quot;</span>;</span><br><span class="line">        counter++;</span><br><span class="line">        <span class="keyword">if</span> (counter % <span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">            std::cout &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    pcl::PointCloud &lt;pcl::PointXYZRGB&gt;::Ptr colored_cloud = reg.<span class="built_in">getColoredCloud</span>();</span><br><span class="line">    pcl::<span class="function">visualization::CloudViewer <span class="title">viewer</span><span class="params">(<span class="string">&quot;Cluster viewer&quot;</span>)</span></span>;</span><br><span class="line">    viewer.<span class="built_in">showCloud</span>(colored_cloud);</span><br><span class="line">    <span class="keyword">while</span> (!viewer.<span class="built_in">wasStopped</span>())</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -296,7 +302,7 @@
   </a>
   <a class="article-nav-btn right "
     
-      href="/2024/02/21/stm32%E6%8A%80%E6%9C%AF/"
+      href="../../../02/21/stm32%E6%8A%80%E6%9C%AF/"
       title="stm32技术"
      >
 
@@ -363,6 +369,6 @@
 </script>
 
   </div>
-  <script src="/js/light-dark-switch.js"></script>
+  <script src="../../../../js/light-dark-switch.js"></script>
 </body>
 </html>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmentatio">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-02-15T13:03:37.000Z">
-<meta property="article:modified_time" content="2024-02-24T14:17:56.979Z">
+<meta property="article:modified_time" content="2024-03-10T06:02:45.149Z">
 <meta property="article:author" content="lil">
 <meta property="article:tag" content="project">
 <meta property="article:tag" content="CV">
@@ -181,6 +181,11 @@
       <h3 class="widget-title">Archives</h3>
       
       
+        <a class="archive-link" href="/archives/2024/03 ">
+          March 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2024/02 ">
           February 2024 
           <div class="archive-count">3 </div>
@@ -196,6 +201,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2024/03/10/pcl/" title="pcl" >
+            <div class="recent-link-text">
+              pcl
+            </div>
+          </a>
         
           <a class="recent-link" href="/2024/02/21/stm32%E6%8A%80%E6%9C%AF/" title="stm32技术" >
             <div class="recent-link-text">
@@ -258,7 +269,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            301 words 
+            458 words 
           </div>
         </div>
         
@@ -285,6 +296,8 @@
 <li>ValueError: need at least one array to concatenate mask<br>img_dir必须是jpg格式</li>
 <li>FileNotFoundError: [Errno 2] No such file or directory: ‘数据集中一文件夹名’<br>更新config文档，检查数据集路径</li>
 <li>CUDA out of memeory<br>调小 batch size；关闭所有内核，释放其它notebook占用的显存；重启实例，或者使用显存更高的实例</li>
+<li>配置pcl环境出现的问题<br>运行D:\PCL 1.12.0\PCL 1.14.0\bin&gt;pcl_mesh_sampling.exe D:\solidworks D:\solidworks时 系统错误：由于找不到vtk<br>未解决。反复检查了环境。改用cloudcompare。<br>-vs报错C1083无法打开源文件: “_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING &#x2F;D _UNICODE &#x2F;D UNICODE &#x2F;Gm- &#x2F;EHsc &#x2F;RTC1 &#x2F;MDd &#x2F;GS &#x2F;fp:precise &#x2F;Zc:wchar_t &#x2F;Zc:forScope &#x2F;Zc:inline &#x2F;permissive- &#x2F;Fox64\Debug\ &#x2F;Fdx64\Debug\vc143.pdb &#x2F;external:W3 &#x2F;Gd &#x2F;TP &#x2F;FC &#x2F;errorReport:prompt 1.cpp”: No such file or directory	pcltest	D:_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING \D _UNICODE \D UNICODE \Gm- \EHsc \RTC1 \MDd \GS \fp:precise \Zc:wchar_t \Zc:forScope \Zc:inline \permissive- \Fox64\Debug\ \Fdx64\Debug\vc143.pdb \external:W3 \Gd \TP \FC \errorReport:prompt 1.cpp	1		<br>SDK版本移位</li>
+<li>默认release模式也有原因 运行代码在debug模式下（闲鱼配置环境两小时花费45）</li>
 </ul>
 
         

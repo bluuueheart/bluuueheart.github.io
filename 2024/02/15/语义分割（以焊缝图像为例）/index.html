@@ -20,20 +20,26 @@
   <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmentatio">
+  <meta name="description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式。最终采用的数据集包含焊缝图像192张，并使用伪彩色标注进行训练；数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语义分割（以焊缝图像为例）">
 <meta property="og:url" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="lil&#39;s blog">
-<meta property="og:description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmentatio">
+<meta property="og:description" content="环境：featurizeGPU RTX 4000 CUDA v11.3 标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式。最终采用的数据集包含焊缝图像192张，并使用伪彩色标注进行训练；数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别 安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/2.png">
+<meta property="og:image" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/4.png">
+<meta property="og:image" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/3.png">
+<meta property="og:image" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/5.png">
+<meta property="og:image" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/6_.png">
 <meta property="article:published_time" content="2024-02-15T13:03:37.000Z">
-<meta property="article:modified_time" content="2024-03-10T06:02:45.149Z">
+<meta property="article:modified_time" content="2024-03-23T02:53:20.069Z">
 <meta property="article:author" content="lil">
 <meta property="article:tag" content="project">
 <meta property="article:tag" content="CV">
 <meta property="article:tag" content="py">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bluuueheart.github.io/2024/02/15/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%88%E4%BB%A5%E7%84%8A%E7%BC%9D%E5%9B%BE%E5%83%8F%E4%B8%BA%E4%BE%8B%EF%BC%89/2.png">
   
     <link rel="alternate" href="../../../../atom.xml" title="lil's blog" type="application/atom+xml">
   
@@ -269,7 +275,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            458 words 
+            351 words 
           </div>
         </div>
         
@@ -279,14 +285,15 @@
       <div class="e-content article-entry" itemprop="articleBody">
         
           <p>环境：featurize<br>GPU RTX 4000 CUDA v11.3</p>
-<h1 id="标注自己的语义分割数据集"><a href="#标注自己的语义分割数据集" class="headerlink" title="标注自己的语义分割数据集"></a>标注自己的语义分割数据集</h1><p>Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式<br><a target="_blank" rel="noopener" href="https://www.coovally.com/">数据集格式转换工具</a><br>整数掩膜矩阵反映了原图对应像素的类别</p>
+<h1 id="标注自己的语义分割数据集"><a href="#标注自己的语义分割数据集" class="headerlink" title="标注自己的语义分割数据集"></a>标注自己的语义分割数据集</h1><p>Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式。最终采用的数据集包含焊缝图像192张，并使用伪彩色标注进行训练；<br><a target="_blank" rel="noopener" href="https://www.coovally.com/">数据集格式转换工具</a><br>整数掩膜矩阵反映了原图对应像素的类别<br><img src="2.png" title="伪彩色截图"><br><img src="4.png" title="原图截图"></p>
 <h1 id="安装配置MMSegmentation"><a href="#安装配置MMSegmentation" class="headerlink" title="安装配置MMSegmentation"></a>安装配置MMSegmentation</h1><p>安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmentation 检查安装成功 设置Matplotlib中文字体</p>
 <ul>
-<li><input disabled="" type="checkbox"> 云GPU环境无法保留，需要重复配置</li>
+<li><input checked="" disabled="" type="checkbox"> 云GPU环境无法保留，需要重复配置<br>见featurize官方文档说明。</li>
 </ul>
-<h1 id="准备config配置文件"><a href="#准备config配置文件" class="headerlink" title="准备config配置文件"></a>准备config配置文件</h1><h2 id="数据集配置文件"><a href="#数据集配置文件" class="headerlink" title="数据集配置文件"></a>数据集配置文件</h2><p>各类别名称及配色</p>
+<h1 id="准备config配置文件"><a href="#准备config配置文件" class="headerlink" title="准备config配置文件"></a>准备config配置文件</h1><p><img src="3.png"></p>
+<h2 id="数据集配置文件"><a href="#数据集配置文件" class="headerlink" title="数据集配置文件"></a>数据集配置文件</h2><p>各类别名称及配色</p>
 <h2 id="注册数据集类"><a href="#注册数据集类" class="headerlink" title="注册数据集类"></a>注册数据集类</h2><h2 id="pipeline配置文件"><a href="#pipeline配置文件" class="headerlink" title="pipeline配置文件"></a>pipeline配置文件</h2><p>数据集路径、预处理、后处理、DataLoader、测试集评估指标</p>
-<h1 id="训练-语义分割算法-KNet"><a href="#训练-语义分割算法-KNet" class="headerlink" title="训练 语义分割算法-KNet"></a>训练 语义分割算法-KNet</h1><p>文件名要变 例：</p>
+<h1 id="训练-语义分割算法-KNet"><a href="#训练-语义分割算法-KNet" class="headerlink" title="训练 语义分割算法-KNet"></a>训练 语义分割算法-KNet</h1><p>训练KNet语义分割算法，调整参数。<br>文件名要变 例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd mmsegmentation</span><br><span class="line"></span><br><span class="line">python tools/train.py lil-Configs/lilDataset_PSPNet_20230818.py</span><br></pre></td></tr></table></figure>
 <ul>
 <li><input disabled="" type="checkbox"> 可视化训练日志</li>
@@ -295,9 +302,7 @@
 <ul>
 <li>ValueError: need at least one array to concatenate mask<br>img_dir必须是jpg格式</li>
 <li>FileNotFoundError: [Errno 2] No such file or directory: ‘数据集中一文件夹名’<br>更新config文档，检查数据集路径</li>
-<li>CUDA out of memeory<br>调小 batch size；关闭所有内核，释放其它notebook占用的显存；重启实例，或者使用显存更高的实例</li>
-<li>配置pcl环境出现的问题<br>运行D:\PCL 1.12.0\PCL 1.14.0\bin&gt;pcl_mesh_sampling.exe D:\solidworks D:\solidworks时 系统错误：由于找不到vtk<br>未解决。反复检查了环境。改用cloudcompare。<br>-vs报错C1083无法打开源文件: “_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING &#x2F;D _UNICODE &#x2F;D UNICODE &#x2F;Gm- &#x2F;EHsc &#x2F;RTC1 &#x2F;MDd &#x2F;GS &#x2F;fp:precise &#x2F;Zc:wchar_t &#x2F;Zc:forScope &#x2F;Zc:inline &#x2F;permissive- &#x2F;Fox64\Debug\ &#x2F;Fdx64\Debug\vc143.pdb &#x2F;external:W3 &#x2F;Gd &#x2F;TP &#x2F;FC &#x2F;errorReport:prompt 1.cpp”: No such file or directory	pcltest	D:_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING \D _UNICODE \D UNICODE \Gm- \EHsc \RTC1 \MDd \GS \fp:precise \Zc:wchar_t \Zc:forScope \Zc:inline \permissive- \Fox64\Debug\ \Fdx64\Debug\vc143.pdb \external:W3 \Gd \TP \FC \errorReport:prompt 1.cpp	1		<br>SDK版本移位</li>
-<li>默认release模式也有原因 运行代码在debug模式下（闲鱼配置环境两小时花费45）</li>
+<li>CUDA out of memeory<br>调小 batch size；关闭所有内核，释放其它notebook占用的显存；重启实例，或者使用显存更高的实例<br><img src="5.png"><br><img src="6_.png"></li>
 </ul>
 
         

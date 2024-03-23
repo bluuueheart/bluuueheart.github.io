@@ -261,7 +261,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            278 words 
+            488 words 
           </div>
         </div>
         
@@ -271,9 +271,8 @@
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            大部分代码来源于pcl官方教程，仅作少量修改，作练习用。
-segmentation分割（聚类）实现效果
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;pcl/point_types.h&gt;#include &lt;pcl/io/pcd_io.h&gt;#include &lt;pcl/search/search.h&gt;#include &lt;pcl/search/kdtree.h&gt;#include &lt;pcl/features/normal_3d.h&gt;#include &lt;pcl/visualization/cloud_viewer.h&gt;#include &lt;pcl/filters/filter_indices....  
+            配置pcl+vs环境
+配置pcl环境出现的问题运行D:\PCL 1.12.0\PCL 1.14.0\bin&gt;pcl_mesh_sampling.exe D:\solidworks D:\solidworks时 系统错误：由于找不到vtk未解决。反复检查了环境。改用cloudcompare。-vs报错C1083无法打开源文件: “_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING &#x2F;D _UNICODE &#x2F;D UNICODE &#x2F;Gm- &#x2F;EHsc &#x2F;RTC1 &#x2F;MDd &#x2F;GS &#x2F;fp:precise &#x2F;Zc:wchar_t &#x2F;Zc:forScope &#x2F;Zc:inline &#x2F;permissive- &#x2F;Fox64\Debug\ &#x2F;Fdx64\Debug\vc143.pdb &#x2F;external:W3 &#x2F;Gd &#x2F;TP &#x2F;FC &#x2F;errorReport:prompt ...  
           </div>
         
       </div>
@@ -398,7 +397,7 @@ segmentation分割（聚类）实现效果
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            458 words 
+            351 words 
           </div>
         </div>
         
@@ -409,21 +408,16 @@ segmentation分割（聚类）实现效果
         
           <div class="truncate-text">
             环境：featurizeGPU RTX 4000 CUDA v11.3
-标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别
+标注自己的语义分割数据集Labelme标注数据集、SAM分割一切视觉大模型辅助标注、整理标注格式为整数掩码格式。最终采用的数据集包含焊缝图像192张，并使用伪彩色标注进行训练；数据集格式转换工具整数掩膜矩阵反映了原图对应像素的类别
 安装配置MMSegmentation安装Pytorch 用MIM安装MMCV 安装其它工具包 下载 MMSegmentation 安装 MMSegmentation 检查安装成功 设置Matplotlib中文字体
 
- 云GPU环境无法保留，需要重复配置
+ 云GPU环境无法保留，需要重复配置见featurize官方文档说明。
 
-准备config配置文件数据集配置文件各类别名称及配色
+准备config配置文件
+数据集配置文件各类别名称及配色
 注册数据集类pipeline配置文件数据集路径、预处理、后处理、DataLoader、测试集评估指标
-训练 语义分割算法-KNet文件名要变 例：
-123cd mmsegmentationpython tools/train.py lil-Configs/lilDataset_PSPNet_20230818.py
-
- 可视化训练日志
-
-bug:
-
-ValueError: need at least one array to concaten...  
+训练 语义分割算法-KNet训练KNet语义分割算法，调整参数。文件名要变 例：
+123cd mmsegmentationpython tools/train.py lil-Configs/lilDataset_PSPNet_2023081...  
           </div>
         
       </div>
